@@ -28,21 +28,6 @@ public class Dron {
 		return urbanizacionesParaVisitar;
 	}
 	
-	private int obtenerAdyacenteApiIdealista(int identificadorUrbanizacionOrigen, String direccion) {
-		int identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen;
-		if (direccion == DERECHA) {
-			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen + 1;
-		} else if (direccion == IZQUIERDA) {
-			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen - 1;
-		} else if (direccion == ABAJO) {
-			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen + 5;
-		} else if (direccion == ARRIBA) {
-			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen - 5;
-		}
-
-		return identificadorUrbanizacionResultado;
-	}
-	
 	private int obtenerPrimeraUrbanizacionRecorrido(int rango, int origen) {
 		for (int i = 0; i < rango; i++) {
 			origen = obtenerAdyacente(origen, ARRIBA);
@@ -85,4 +70,19 @@ public class Dron {
 	private int obtenerTamanioPerimetro(int rango) {
 		return 4*(2*rango);
 	}	
+	
+	private int obtenerAdyacenteApiIdealista(int identificadorUrbanizacionOrigen, String direccion) {
+		int identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen;
+		if (direccion == DERECHA) {
+			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen + 1;
+		} else if (direccion == IZQUIERDA) {
+			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen - 1;
+		} else if (direccion == ABAJO) {
+			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen + 5;
+		} else if (direccion == ARRIBA) {
+			identificadorUrbanizacionResultado = identificadorUrbanizacionOrigen - 5;
+		}
+
+		return identificadorUrbanizacionResultado;
+	}
 }
